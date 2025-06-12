@@ -18,7 +18,9 @@ const queue = new Queue("file-upload-queue", {
   connection: {
     // host: 'localhost',
     // port: '6379',
-    url: process.env.VALKEY_URL
+    host: 'valkey-48in',
+    port: '10000',
+    // url: process.env.VALKEY_URL
   },
 });
 
@@ -108,5 +110,7 @@ const worker = new Worker('file-upload-queue', async job => {
 }, { concurrency: 100, connection: {
     // host: 'localhost',
     // port: '6379',
-    url: process.env.VALKEY_URL
+    host: 'valkey-48in',
+    port: '10000',
+    // url: process.env.VALKEY_URL
 }, });
