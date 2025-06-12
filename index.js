@@ -16,8 +16,9 @@ const client = new OpenAI({
 
 const queue = new Queue("file-upload-queue", {
   connection: {
-    host: 'localhost',
-    port: '6379',
+    // host: 'localhost',
+    // port: '6379',
+    url: process.env.VALKEY_URL
   },
 });
 
@@ -105,6 +106,7 @@ const worker = new Worker('file-upload-queue', async job => {
   await vectorStore.addDocuments(docs);
 
 }, { concurrency: 100, connection: {
-    host: 'localhost',
-    port: '6379',
+    // host: 'localhost',
+    // port: '6379',
+    url: process.env.VALKEY_URL
 }, });
