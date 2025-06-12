@@ -19,7 +19,7 @@ const queue = new Queue("file-upload-queue", {
     // host: 'localhost',
     // port: '6379',
     host: 'valkey-48in',
-    port: '10000',
+    port: '6379',
     // url: process.env.VALKEY_URL
   },
 });
@@ -111,6 +111,6 @@ const worker = new Worker('file-upload-queue', async job => {
     // host: 'localhost',
     // port: '6379',
     host: 'valkey-48in',
-    port: '10000',
+    port: '6379',
     // url: process.env.VALKEY_URL
 }, });
