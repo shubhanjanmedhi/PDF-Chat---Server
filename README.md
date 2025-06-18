@@ -1,7 +1,7 @@
 # PDF Chat -- Server (Backend)
 Chat based RAG Application where you can upload one or multiple PDF files and chat with it
 
-Pre-requisite: Node.js must be installed in your system and Docker must be configured and running
+**Pre-requisite:** Node.js must be installed in your system and Docker must be configured and running
 
 Step 1: Create a `.env` file to the project root
 
