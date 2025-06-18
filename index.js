@@ -16,11 +16,8 @@ const client = new OpenAI({
 
 const queue = new Queue("file-upload-queue", {
   connection: {
-    // host: 'localhost',
-    // port: '6379',
-    host: 'valkey-48in',
+    host: 'localhost',
     port: '6379',
-    // url: process.env.VALKEY_URL
   },
 });
 
@@ -37,7 +34,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000'
+  ]
+}));
 
 app.get('/', (req, res) => {
     return(res.json({ status: 'All Good!' }));
@@ -108,9 +109,6 @@ const worker = new Worker('file-upload-queue', async job => {
   await vectorStore.addDocuments(docs);
 
 }, { concurrency: 100, connection: {
-    // host: 'localhost',
-    // port: '6379',
-    host: 'valkey-48in',
+    host: 'localhost',
     port: '6379',
-    // url: process.env.VALKEY_URL
 }, });
