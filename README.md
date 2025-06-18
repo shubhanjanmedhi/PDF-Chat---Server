@@ -3,6 +3,11 @@ Chat based RAG Application where you can upload one or multiple PDF files and ch
 
 **Pre-requisite:** Node.js must be installed in your system and Docker must be configured and running
 
+**Docker Images:**
+
+    Valkey: https://hub.docker.com/r/valkey/valkey
+    Qdrant: https://hub.docker.com/r/qdrant/qdrant
+
 Step 1: Create a `.env` file to the project root
 
 Step 2: Add
