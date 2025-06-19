@@ -8,7 +8,7 @@
     "dev:worker": "node --watch worker.js",
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Shubhanjan",
   "license": "ISC",
   "description": "",
   "dependencies": {
